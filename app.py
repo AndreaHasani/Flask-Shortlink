@@ -1,0 +1,13 @@
+from flask import Flask, render_template, request
+
+import os
+
+application = Flask(__name__)
+APP_DIR = os.path.dirname(os.path.realpath(__file__))
+application.config.from_pyfile('config.py')
+application.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+from views import *
+
+if __name__ == '__main__':
+    application.run(host="0.0.0.0",port="5005", debug=True)

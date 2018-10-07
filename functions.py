@@ -13,4 +13,3 @@ def shortlink(db, table, url):
     db.session.add(table(str(key), url))
     db.session.commit()
     return key
-
